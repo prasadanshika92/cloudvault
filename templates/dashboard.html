@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudVault Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h2>☁ CloudVault</h2>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/features">Features</a></li>
+            <li><a href="#" id="logoutBtn">Logout</a></li>
+
+            <li>
+                <button id="themeToggle" class="theme-btn">
+                    🌙 Dark Mode
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+
+        <h1>CloudVault Dashboard</h1>
+
+        <h3 id="userEmail" style="color:#555;"></h3>
+
+        <!-- Upload -->
+        <form class="upload-box" action="/upload" method="POST" enctype="multipart/form-data">
+
+            <input type="file" name="file" required>
+
+            <button type="submit">
+                Upload File
+            </button>
+
+        </form>
+
+        <!-- Search -->
+        <input
+            type="text"
+            id="searchInput"
+            class="search-box"
+            placeholder="🔍 Search files..."
+            onkeyup="searchFiles()">
+
+        <!-- Files -->
+        <div class="files">
+
+            <h2>Uploaded Files</h2>
+
+            {% if files %}
+
+                {% for file in files %}
+
+                <div class="file-card">
+
+                    <div>
+
+                        <h3>📄 {{ file.name }}</h3>
+
+                        <p>📦 Size : {{ file.size }} KB</p>
+
+                        <p>📅 Uploaded : {{ file.date }}</p>
+
+                    </div>
+
+                    <div>
+
+                        <a class="download-btn"
+                           href="/download/{{ file.name }}">
+                           ⬇ Download
+                        </a>
+
+                        <a class="delete-btn"
+                           href="/delete/{{ file.name }}">
+                           🗑 Delete
+                        </a>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <p>No files uploaded yet.</p>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <script type="module" src="{{ url_for('static', filename='firebase.js') }}"></script>
+
+    <script>
+
+    // Search Files
+    function searchFiles(){
+
+        let input = document.getElementById("searchInput").value.toLowerCase();
+
+        let cards = document.querySelectorAll(".file-card");
+
+        cards.forEach(function(card){
+
+            let fileName = card.querySelector("h3").innerText.toLowerCase();
+
+            if(fileName.includes(input)){
+                card.style.display="flex";
+            }
+            else{
+                card.style.display="none";
+            }
+
+        });
+
+    }
+
+    // Dark Mode
+
+    const themeBtn=document.getElementById("themeToggle");
+
+    if(localStorage.getItem("theme")=="dark"){
+
+        document.body.classList.add("dark-mode");
+
+        themeBtn.innerHTML="☀️ Light Mode";
+
+    }
+
+    themeBtn.onclick=function(){
+
+        document.body.classList.toggle("dark-mode");
+
+        if(document.body.classList.contains("dark-mode")){
+
+            localStorage.setItem("theme","dark");
+
+            themeBtn.innerHTML="☀️ Light Mode";
+
+        }
+
+        else{
+
+            localStorage.setItem("theme","light");
+
+            themeBtn.innerHTML="🌙 Dark Mode";
+
+        }
+
+    }
+
+    </script>
+
+</body>
+</html>

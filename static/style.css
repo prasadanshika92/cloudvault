@@ -1,0 +1,491 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+}
+
+/* Navbar */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#0d6efd;
+    padding:20px 60px;
+}
+
+.navbar h2{
+    color:white;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+}
+
+.nav-links li{
+    margin-left:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+}
+
+.nav-links a:hover{
+    color:yellow;
+}
+
+/* Hero */
+
+.hero{
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h1{
+    font-size:48px;
+    color:#0d6efd;
+}
+
+.hero p{
+    margin:20px 0;
+    font-size:20px;
+    color:#555;
+}
+
+.hero button{
+    padding:15px 35px;
+    border:none;
+    background:#0d6efd;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.hero button:hover{
+    background:#084298;
+}
+
+/* Features */
+
+.features{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:60px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:280px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card h2{
+    color:#0d6efd;
+    margin-bottom:15px;
+}
+
+/* Footer */
+
+footer{
+    background:#0d6efd;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+/* Login & Register Page */
+
+.login-container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0d6efd,#4dabf7);
+}
+
+.login-box{
+    background:white;
+    width:350px;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.login-box h1{
+    color:#0d6efd;
+    margin-bottom:8px;
+    font-size:28px;
+}
+
+.login-box h2{
+    margin-bottom:20px;
+    font-size:22px;
+}
+
+.login-box input{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+}
+
+.login-box button{
+    width:100%;
+    padding:10px;
+    margin-top:15px;
+    background:#0d6efd;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.login-box button:hover{
+    background:#084298;
+}
+
+.login-box p{
+    margin-top:15px;
+    font-size:14px;
+}
+
+.login-box a{
+    color:#0d6efd;
+    text-decoration:none;
+    font-weight:bold;
+}
+/* Dashboard */
+
+.dashboard{
+    width:90%;
+    margin:40px auto;
+}
+
+.upload-card,
+.files-card{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom:30px;
+}
+
+.upload-card input{
+    margin-top:15px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th,
+table td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:left;
+}
+
+table th{
+    background:#0d6efd;
+    color:white;
+}
+
+.files-card button{
+    margin-right:10px;
+    padding:8px 15px;
+    border:none;
+    background:#0d6efd;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+/* ================= DASHBOARD ================= */
+
+.dashboard{
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.dashboard h1{
+    text-align:center;
+    color:#0d6efd;
+    margin-bottom:25px;
+}
+
+.upload-box{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.upload-box input[type=file]{
+    padding:10px;
+    border:2px solid #0d6efd;
+    border-radius:8px;
+    background:#fff;
+}
+
+.upload-box button{
+    padding:12px 28px;
+    background:#0d6efd;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.upload-box button:hover{
+    background:#084298;
+    transform:scale(1.05);
+}
+
+.files{
+    margin-top:30px;
+}
+
+.files h2{
+    color:#0d6efd;
+    margin-bottom:20px;
+}
+
+.file-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#ffffff;
+    padding:18px 22px;
+    margin-bottom:18px;
+    border-radius:12px;
+    border-left:5px solid #0d6efd;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    transition:all 0.3s ease;
+}
+
+.file-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.file-card a{
+    text-decoration:none;
+    color:white;
+    padding:10px 18px;
+    border-radius:8px;
+    margin-left:10px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.download-btn{
+    background:#198754;
+    padding:10px 18px;
+    border-radius:8px;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.download-btn:hover{
+    background:#146c43;
+    transform:scale(1.05);
+}
+.delete-btn{
+    background:#dc3545;
+    padding:10px 18px;
+    border-radius:8px;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.delete-btn:hover{
+    background:#bb2d3b;
+    transform:scale(1.05);
+}
+/* Search Box */
+
+.search-box{
+    width:100%;
+    padding:12px 15px;
+    margin:20px 0;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+}
+
+.search-box:focus{
+    border:2px solid #0d6efd;
+}
+/* ===========================
+   DARK MODE
+=========================== */
+
+.theme-btn{
+    background:#0d6efd;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.theme-btn:hover{
+    background:#084298;
+}
+
+.dark-mode{
+    background:#121212;
+    color:white;
+}
+
+.dark-mode .navbar{
+    background:#1f1f1f;
+}
+
+.dark-mode .dashboard{
+    background:#181818;
+}
+
+.dark-mode .upload-box{
+    background:#242424;
+}
+
+.dark-mode .file-card{
+    background:#242424;
+    color:white;
+    border:1px solid #444;
+}
+
+.dark-mode .search-box{
+    background:#2b2b2b;
+    color:white;
+    border:1px solid #555;
+}
+
+.dark-mode input{
+    background:#2b2b2b;
+    color:white;
+    border:1px solid #555;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p{
+    color:white;
+}
+
+.dark-mode a{
+    color:#4da3ff;
+}
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media (max-width: 768px) {
+
+    .navbar{
+        flex-direction:column;
+        padding:15px 20px;
+        gap:15px;
+    }
+
+    .nav-links{
+        flex-direction:column;
+        align-items:center;
+        gap:10px;
+    }
+
+    .nav-links li{
+        margin:0;
+    }
+
+    .dashboard{
+        width:95%;
+        padding:20px;
+    }
+
+    .upload-box{
+        flex-direction:column;
+    }
+
+    .upload-box input[type=file]{
+        width:100%;
+    }
+
+    .upload-box button{
+        width:100%;
+    }
+
+    .file-card{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .file-card div:last-child{
+        width:100%;
+        display:flex;
+        gap:10px;
+    }
+
+    .download-btn,
+    .delete-btn{
+        flex:1;
+        text-align:center;
+    }
+
+    .search-box{
+        width:100%;
+    }
+
+    .login-box{
+        width:90%;
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .features{
+        padding:20px;
+    }
+
+    .card{
+        width:100%;
+    }
+}
